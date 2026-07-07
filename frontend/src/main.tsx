@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import { WagmiProvider } from "wagmi";
 import { App } from "./App";
 import { config } from "./wagmi";
+import "./index.css";
 
 const qc = new QueryClient();
 
