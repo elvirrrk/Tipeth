@@ -57,8 +57,21 @@ export function App() {
 			<div className='container'>
 				<Header />
 				<main className='main-page'>
-					<p className='main-page__text'>Send tips now</p>
-					<ConnectButton/>	
+					<div className='main-page__start'>
+						<div className='main-page__connection'>
+							<p className='connection__text'>Send tips now</p>
+							<ConnectButton />
+						</div>
+
+						<p className='main-page__adv-text'>Connect your wallet, type in a creator's address
+							<br />
+							and how much ETH you want to send, hit Tip.
+							<br />
+							That's it — the ETH goes straight to them,
+							<br />
+							and the contract quietly keeps score.
+						</p>
+					</div>
 				</main>
 				<Footer />
 			</div>
@@ -71,18 +84,18 @@ export function App() {
 				<h1 className='main-page__header'>Tipeth</h1>
 				<ConnectButton />
 				{address && <p className='main-page__connected-address'>
-						<b>Connected as: </b>
-						<code> {address}</code>
-					</p>}
+					<b>Connected as: </b>
+					<code> {address}</code>
+				</p>}
 				<div className='main-page__sending'>
 					<input
-					className='main-page__input'
+						className='main-page__input'
 						value={recipient}
 						onChange={e => setRecipient(e.target.value)}
 						placeholder="0x... address"
 					/>
 					<input
-					className='main-page__input'
+						className='main-page__input'
 						value={amount}
 						onChange={e => setAmount(e.target.value)}
 						placeholder="0.001 amount in ETH"
@@ -103,11 +116,14 @@ export function App() {
 						{write.isPending ? "Sending…" : "Send tips"}
 					</button>
 				</div>
-				{recipient && totalReceived !== undefined && (
-					<p className='main-page__casual-text'>This address recieved <code>{formatEther(totalReceived)} ETH</code></p>
-				)}
-				{write.data && <p>TX hash: <code>{write.data}</code></p>}
-				{write.error && <p className='warn-red'>{write.error.message}</p>}
+				<div className='main-page__tx-description'>
+					{recipient && totalReceived !== undefined && (
+						<p className='main-page__text'>This address recieved: <code>{formatEther(totalReceived)} ETH</code></p>
+					)}
+					{write.data && <p>TX hash: <code>{write.data}</code></p>}
+					{write.error && <p className='warn-red'>{write.error.message}</p>}
+				</div>
+
 				{events.length > 0 &&
 					<div className='tips'>
 						<h2 className='tips__header'>Recent tips</h2>
@@ -115,13 +131,13 @@ export function App() {
 							{events.map((elem, index) =>
 								<li className='tips-list__tip' key={index}>
 									<div className='tip__row from-to'>
-										<b>From:</b> <code>{elem.from}</code> 
+										<b>From:</b> <code>{elem.from}</code>
 									</div>
 									<div className='tip__row from-to'>
 										<b>To:</b> <code>{elem.to}</code>
 									</div>
 									<div className='tip__row amount'>
-										<b>Amount:</b> <code>{(formatEther(elem.amount).toString())} ETH</code> 
+										<b>Amount:</b> <code>{(formatEther(elem.amount).toString())} ETH</code>
 									</div>
 									<div className='tip__row hash'>
 										<b>Short Tx hash:</b> <code>{elem.txHash.slice(0, 10)}</code>

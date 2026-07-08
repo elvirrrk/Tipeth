@@ -7,10 +7,7 @@
 	background-color: #B3DCFF;
 	padding: 20px 30px;
 	height: fit-content;
-}
-
-.footer__text {
-	color: #474646;
+	font-family: monospace;
 }
 
 .footer-info {
@@ -26,12 +23,14 @@
 p {
 	margin: 0;
 	padding: 0;
+	color: #474646;
 }
 
 .footer-info__network {
 	font-style: italic;
 	margin: 0;
 	padding: 0;
+	
 }
 
 a {
@@ -41,6 +40,7 @@ a {
 	transition: 0.3s;
 	margin: 0;
 	padding: 0;
+	text-shadow: 0 0 2px rgba(132, 204, 243, 0.776);
 
 	&:hover {
 		color: #147b9d;

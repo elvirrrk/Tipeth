@@ -1,6 +1,10 @@
 # Tipeth
 Send ETH tips straight to anyone's wallet.
-<!-- screenshot -->
+
+## Screenshot
+![alt text](image-1.png)
+![alt text](image-2.png)
+
 ## How it works
 
 Connect your wallet, type in a creator's address and how much ETH you want to send, hit Tip. That's it — the ETH goes straight to them, and the contract quietly keeps score.

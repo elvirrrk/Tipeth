@@ -7,18 +7,30 @@
 .main-page {
 	display: flex;
 	flex: 1;
-	padding: 0 30px;
+	margin: auto;
 	font-size: 1.2rem;
 	flex-direction: column;
 	background: #ffffff;
 	color: #002340;
 }
 
-.main-page__text {
+.main-page__header {
+	font-family: monospace;
+}
+
+.main-page__connection {
+	display: flex;
+	flex-direction: column;
+	font-family: monospace;
+	gap: 15px;
+	align-items: start;
+}
+
+.connection__text {
 	font-weight: 700;
 	font-size: 30px;
 	line-height: 36px;
-	margin: 20px 0;
+	margin: 0;
 	color: #002340;
 }
 
@@ -29,12 +41,29 @@
 .main-page__connected-address {
 	display: flex;
 	justify-content: start;
+	align-items: center;
 	width: fit-content;
 	margin: 20px 0 10px;
 	padding: 10px;
 	background-color: #caedfa;
 	border: solid 2px rgba(0, 119, 204, 0.3);
 	border-radius: 5px;
+	font-family: monospace;
+}
+
+.main-page__start {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	margin-top: 30%;
+}
+
+.main-page__adv-text {
+	padding: 20px;
+	font-family: monospace;
+
 }
 
 .main-page__sending {
@@ -64,6 +93,15 @@
 	font-style: italic;
 }
 
+.main-page__tx-description {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	padding: 10px;
+	gap: 10px;
+	text-shadow: 0 0 2px rgba(81, 194, 255, 0.328);
+}
+
 .main-page__button-transaction {
 	background-color: #138ff5;
 	height: fit-content;
@@ -84,6 +122,10 @@
 .main-page__button-transaction:active {
 	box-shadow: none;
 	padding-top: 17px;
+}
+
+.tips__header {
+	font-family: monospace;
 }
 
 .tips-list {
@@ -141,4 +183,5 @@
 	font-size: 30px;
 	line-height: 36px;
 	text-transform: uppercase;
+	font-family: monospace;
 }
