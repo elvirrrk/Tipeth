@@ -6,7 +6,7 @@
 	bottom: 0;
 	background-color: #B3DCFF;
 	padding: 20px 30px;
-	height: 70px;
+	height: fit-content;
 }
 
 .footer__text {

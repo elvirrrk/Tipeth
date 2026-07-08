@@ -6,6 +6,12 @@ body {
 	scroll-behavior: smooth;
 }
 
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
 img {
 	max-width: 100%;
 	object-fit: contain;
