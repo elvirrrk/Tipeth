@@ -54,14 +54,14 @@ export function App() {
 	});
 	if (!isConnected)
 		return (
-			<>
+			<div className='container'>
 				<Header />
 				<main className='main-page'>
 					<p className='main-page__text'>Send tips now</p>
 					<ConnectButton/>	
 				</main>
 				<Footer />
-			</>
+			</div>
 		);
 
 	return (
