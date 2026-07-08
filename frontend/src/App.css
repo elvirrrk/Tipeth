@@ -1,11 +1,18 @@
 .main-page {
-	flex: 1;
 	display: flex;
-	height: 100vh;
+	height: 100%;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: #fffcf5;
+	background: #ffffff;
+}
+
+.main-page__text {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 20px auto;
+	color: #002340;
 }
 
 .main-page__button-connection {
@@ -29,13 +36,24 @@
 	align-items: center;
 }
 
-.tip {
-	display: block;
+.tips-list__tip {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
 	padding: 12px 13px;
+}
+
+.tip__row {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
 }
 
 .warn-red {
 	color: #ff5757;
+	margin: 0 auto;
+	word-wrap: wrap;
 }
 
 .logo {

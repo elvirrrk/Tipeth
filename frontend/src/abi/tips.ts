@@ -42,6 +42,5 @@ export const TIPS_ABI = [
 		],
 	},
 ] as const;
-// src/Tips.sol\":{\"keccak256\":0x9885e5f1e3ed8faa9fcf5d9a516759813c20eebf75f81565f535ea0050faec42
 
-export const CONTRACT_ADDRESS = "0x9885e5f1e3ed8faa9fcf5d9a516759813c20eebf75f81565f535ea0050faec42" as `0x${string}`;
+export const CONTRACT_ADDRESS = "0x69846187AA39E34a655D1622Ea2a1E41c350ef90" as `0x${string}`;

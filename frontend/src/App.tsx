@@ -57,7 +57,7 @@ export function App() {
 			<>
 				<Header />
 				<main className='main-page'>
-					<p>Send tips now</p>
+					<p className='main-page__text'>Send tips now</p>
 					<ConnectButton/>	
 				</main>
 				
@@ -109,7 +109,7 @@ export function App() {
 						<h2 className='tips__header'>Recent tips</h2>
 						<ul className='tips__tips-list tips-list'>
 							{events.map((elem, index) =>
-								<li className='tips-list__tip tip' key={index}>
+								<li className='tips-list__tip' key={index}>
 									<div className='tip__row from-to'>From: {elem.from} to {elem.to}:</div>
 									<div className='tip__row amount'>Amount: {elem.amount.toString()}</div>
 									<div className='tip__row hash'>Short Tx hash: {elem.txHash.slice(0, 10)}</div>

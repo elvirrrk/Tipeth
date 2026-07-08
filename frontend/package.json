@@ -15,7 +15,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "viem": "^2.54.6",
-    "wagmi": "^3.6.21"
+    "wagmi": "^2.19.5"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",

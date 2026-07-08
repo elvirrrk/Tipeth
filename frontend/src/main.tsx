@@ -10,11 +10,11 @@ import "./index.css";
 const qc = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <WagmiProvider config={config}>
-    	<QueryClientProvider client={qc}>
-      		<RainbowKitProvider>
-				<App/>
+	<WagmiProvider config={config}>
+		<QueryClientProvider client={qc}>
+			<RainbowKitProvider>
+				<App />
 			</RainbowKitProvider>
-    	</QueryClientProvider>
-  </WagmiProvider>,
+		</QueryClientProvider>
+	</WagmiProvider>,
 );

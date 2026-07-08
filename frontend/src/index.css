@@ -1,7 +1,8 @@
 html,
-body,
-#root {
+body {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 	height: 100%;
 	margin: 0;
 	scroll-behavior: smooth;
@@ -37,5 +38,8 @@ code {
 	font-size: 15px;
 	line-height: 135%;
 	padding: 4px 8px;
-	background: var(--code-bg);
+
+	@media (max-width: 1024px) {
+		font-size: 13px;
+	}
 }
