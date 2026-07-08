@@ -1,17 +1,24 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
 .main-page {
 	display: flex;
-	height: 100%;
+	flex: 1;
+	padding: 0 30px;
+	font-size: 1.2rem;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	background: #ffffff;
+	color: #002340;
 }
 
 .main-page__text {
 	font-weight: 700;
 	font-size: 30px;
 	line-height: 36px;
-	margin: 20px auto;
+	margin: 20px 0;
 	color: #002340;
 }
 
@@ -19,29 +26,84 @@
 	background-color: #013635;
 }
 
-.inupt-number::-webkit-outer-spin-button,
-.inupt-number::-webkit-inner-spin-button {
-	appearance: none;
-	margin: 0;
+.main-page__connected-address {
+	display: flex;
+	justify-content: start;
+	width: fit-content;
+	margin: 20px 0 10px;
+	padding: 10px;
+	background-color: #caedfa;
+	border: solid 2px rgba(0, 119, 204, 0.3);
+	border-radius: 5px;
+}
+
+.main-page__sending {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.main-page__input {
+	margin: 10px 0;
+	padding: 10px 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	outline: none;
+	font-size: 1rem;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-page__input:focus {
+	border-color: #0077cc;
+	box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+::placeholder {
+	color: #aaa;
+	font-style: italic;
+}
+
+.main-page__button-transaction {
+	background-color: #138ff5;
+	height: fit-content;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 12px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.main-page__button-transaction:hover {
+	background-color: #006bdd;
+}
+
+.main-page__button-transaction:active {
+	box-shadow: none;
+	padding-top: 17px;
 }
 
 .tips-list {
 	display: -webkit-box;
 	display: flex;
 	flex-wrap: wrap;
-	width: 148px;
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	align-items: center;
+	list-style: none;
+	border-radius: 8px;
 }
 
 .tips-list__tip {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 10px;
-	padding: 12px 13px;
+	padding: 10px 15px 10px 0;
+	border-bottom: 1px solid #eee;
 }
 
 .tip__row {

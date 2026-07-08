@@ -1,17 +1,12 @@
 .footer {
 	display: flex;
 	gap: 50px;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	position: absolute;
-	width: 100%;
 	bottom: 0;
 	background-color: #B3DCFF;
-	padding: 20px 0;
-	flex-shrink: 0;
-	min-height: 70px;
-	margin-top: 30px;
-	box-shadow: 0 0 15px rgba(0, 42, 93, 0.4);
+	padding: 20px 30px;
+	height: 70px;
 }
 
 .footer__text {
@@ -24,6 +19,8 @@
 	gap: 10px;
 	justify-content: center;
 	align-items: center;
+	font-weight: 500;
+	font-size: 1rem;
 }
 
 p {
@@ -32,12 +29,21 @@ p {
 }
 
 .footer-info__network {
+	font-style: italic;
 	margin: 0;
 	padding: 0;
 }
 
 a {
+	font-weight: 600;
 	text-decoration: none;
+	color: #004aa5;
+	transition: 0.3s;
 	margin: 0;
 	padding: 0;
+
+	&:hover {
+		color: #147b9d;
+
+	}
 }

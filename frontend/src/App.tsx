@@ -9,7 +9,7 @@ import {
 	useAccount,
 	useWatchContractEvent
 } from "wagmi";
-import { parseEther } from 'viem'
+import { parseEther, formatEther } from 'viem'
 import { TIPS_ABI, CONTRACT_ADDRESS } from "./abi/tips"
 
 interface TipEvent {
@@ -60,28 +60,32 @@ export function App() {
 					<p className='main-page__text'>Send tips now</p>
 					<ConnectButton/>	
 				</main>
-				
 				<Footer />
 			</>
 		);
 
 	return (
-		<>
+		<div className='container'>
 			<Header />
 			<main className='main-page'>
 				<h1 className='main-page__header'>Tipeth</h1>
 				<ConnectButton />
-				{address && <p className='main-page__connected-address'>Connected as: {address}</p>}
-				<div>
+				{address && <p className='main-page__connected-address'>
+						<b>Connected as: </b>
+						<code> {address}</code>
+					</p>}
+				<div className='main-page__sending'>
 					<input
+					className='main-page__input'
 						value={recipient}
 						onChange={e => setRecipient(e.target.value)}
 						placeholder="0x... address"
 					/>
 					<input
+					className='main-page__input'
 						value={amount}
 						onChange={e => setAmount(e.target.value)}
-						placeholder="amount in ETH"
+						placeholder="0.001 amount in ETH"
 					/>
 					<button
 						className='main-page__button-transaction'
@@ -100,7 +104,7 @@ export function App() {
 					</button>
 				</div>
 				{recipient && totalReceived !== undefined && (
-					<p>This address recieved {totalReceived}</p>
+					<p className='main-page__casual-text'>This address recieved <code>{formatEther(totalReceived)} ETH</code></p>
 				)}
 				{write.data && <p>TX hash: <code>{write.data}</code></p>}
 				{write.error && <p className='warn-red'>{write.error.message}</p>}
@@ -110,11 +114,20 @@ export function App() {
 						<ul className='tips__tips-list tips-list'>
 							{events.map((elem, index) =>
 								<li className='tips-list__tip' key={index}>
-									<div className='tip__row from-to'>From: {elem.from} to {elem.to}:</div>
-									<div className='tip__row amount'>Amount: {elem.amount.toString()}</div>
-									<div className='tip__row hash'>Short Tx hash: {elem.txHash.slice(0, 10)}</div>
+									<div className='tip__row from-to'>
+										<b>From:</b> <code>{elem.from}</code> 
+									</div>
+									<div className='tip__row from-to'>
+										<b>To:</b> <code>{elem.to}</code>
+									</div>
+									<div className='tip__row amount'>
+										<b>Amount:</b> <code>{(formatEther(elem.amount).toString())} ETH</code> 
+									</div>
+									<div className='tip__row hash'>
+										<b>Short Tx hash:</b> <code>{elem.txHash.slice(0, 10)}</code>
+									</div>
 									<div className='tip__row link'>
-										<span className='link__header-text'>View on explorer</span>
+										<span>View on explorer</span>
 										<a className='link__text' href={`https://sepolia.basescan.org/tx/${elem.txHash}`} target="_blank" rel='noreferrer'>Transaction link</a>
 									</div>
 								</li>
@@ -124,7 +137,7 @@ export function App() {
 				}
 			</main>
 			<Footer />
-		</>
+		</div>
 	);
 }
 
